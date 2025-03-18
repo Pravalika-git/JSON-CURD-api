@@ -35,7 +35,7 @@ btn.addEventListener("click", function () {
             
             })
         }
-        fetch("https://protective-torpid-veterinarian.glitch.me/products", options)
+        fetch("https://puzzled-brazen-aphid.glitch.me/products", options)
             .then(res => {
                 if (res.ok) {
                     title.value = '';
@@ -53,7 +53,7 @@ btn.addEventListener("click", function () {
 })
 
 function getData() {
-    fetch("https://protective-torpid-veterinarian.glitch.me/products")
+    fetch("https://puzzled-brazen-aphid.glitch.me/products")
         .then(res => res.json())
         .then(data => displayData(data));
 }
@@ -82,7 +82,7 @@ function deleteData(id) {
     let options = {
         "method": "DELETE"
     }
-    fetch(`https://protective-torpid-veterinarian.glitch.me/products/${id}`, options)
+    fetch(`https://puzzled-brazen-aphid.glitch.me/products/${id}`, options)
         .then(res => {
             if (res.ok) {
                 getData(); // mandatory
