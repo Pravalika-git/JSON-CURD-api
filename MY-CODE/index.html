@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+     <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+    .container{
+        display: grid;
+        grid-template-columns:repeat(auto-fill,minmax(350px,1fr)) ;
+        padding: 10px;
+        gap: 10px;
+
+    }
+    .image{
+        width:100% ;
+        height: 250px;
+        display:block ;
+        object-fit: contain;
+    }
+    .item{
+        padding: 10px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+
+    }
+        
+
+
+
+       .container>div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 4px;
+            font-size: large;
+        }
+
+        .input {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .input>* {
+            padding: 10px;
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin: auto;
+        }
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+        input {
+            box-shadow: 0px 4px 6px rgba(233, 20, 233, 0.1);
+        }
+        input:focus {
+            border-color: #1b6bc1;
+            box-shadow: 0px 4px 8px rgba(235, 144, 7, 0.3);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+        button:hover {
+            background-color: #1171d7;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+        .image {
+            width: 300px;
+            height: 200px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .image:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(74, 1, 208, 0.3);
+        }
+
+        .item {
+            border: 1px solid #ddd;
+        }
+        .image {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .image:hover {
+            padding: 10px;
+            margin: 5px;
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(171, 10, 75, 0.3);
+        }
+        .item {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            margin: 10px;
+          
+        }
+        
+        body{
+            position: relative;
+        
+        }
+
+        .title{
+            font-weight:500;
+           text-align: center;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           margin: 10px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+         .description{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .rating{
+            position: absolute;
+            top: 0px;
+            right: 5px;
+        }
+        .rating::after{
+            content: '☆';
+        }  
+        .category{
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.5rem;
+        }
+        .item:hover.rating {
+            display: block;
+            transition: 0.5s ease;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transform: translate(-50%);
+           
+        }
+       
+
+    
+        
+        #btn{
+          padding: 10px;  
+          margin: 5px;
+        
+        }
+       
+.loader {
+    width: 120px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform:translate(-50%,-50%) ;
+  
+    --R: 30px;
+    --g1: #514b82 96%, #0000;
+    --g2: #eeeeee 96%, #0000;
+    width: calc(2*var(--R));
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    -webkit-mask: linear-gradient(#000 0 0);
+    animation: l30 2s infinite linear;
+  .loader::before,
+  .loader::after{
+    content:"";
+    grid-area: 1/1;
+    width: 50%;
+    background:
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+      radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R))  0,
+      radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R)   - var(--R));
+     background-size: calc(2*var(--R)) calc(2*var(--R));
+     background-repeat :no-repeat;
+  }
+  .loader::after {
+   transform: rotate(180deg);
+   transform-origin: right;
+  }
+}
+  
+  @keyframes l30 {
+    100% {transform: rotate(-1turn)}
+  }
+    </style> 
+</head>
+
+<body>
+
+    <div class="input">
+        <input type="text" id="title" placeholder="title">
+        <input type="text" id="description" placeholder="description">
+        <input type="text" id="category" placeholder="category">
+        <input type="text" id="price" placeholder=" price">
+        <input type="text" id="rating" placeholder="rating">
+      
+        <button id="btn">add data</button>
+    </div>
+    <div class="container" id="container"></div>
+    <div class="loader" id="loader"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
